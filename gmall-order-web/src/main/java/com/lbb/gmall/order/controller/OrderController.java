@@ -1,8 +1,8 @@
 package com.lbb.gmall.order.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.lbb.gmall.UserAddress;
-import com.lbb.gmall.UserService;
+import com.lbb.gmall.service.UserService;
+import com.lbb.gmall.bean.UserAddress;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 public class OrderController {
 
-//    @Autowired
+    //    @Autowired
     @Reference
     private UserService userService;
     //    @RequestMapping("trade")
