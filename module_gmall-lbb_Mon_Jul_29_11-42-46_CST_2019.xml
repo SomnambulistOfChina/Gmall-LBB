@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gmall-lbb" default="compile.module.gmall-lbb">
+  <dirname property="module.gmall-lbb.basedir" file="${ant.file.module_gmall-lbb}"/>
+  
+  <property name="module.jdk.home.gmall-lbb" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.gmall-lbb" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.gmall-lbb" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.gmall-lbb" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="gmall-lbb.output.dir" value="${module.gmall-lbb.basedir}/out/production/Gmall-LBB"/>
+  <property name="gmall-lbb.testoutput.dir" value="${module.gmall-lbb.basedir}/out/test/Gmall-LBB"/>
+  
+  <path id="gmall-lbb.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gmall-lbb.module.production.classpath">
+    <path refid="${module.jdk.classpath.gmall-lbb}"/>
+  </path>
+  
+  <path id="gmall-lbb.runtime.production.module.classpath">
+    <pathelement location="${gmall-lbb.output.dir}"/>
+  </path>
+  
+  <path id="gmall-lbb.module.classpath">
+    <path refid="${module.jdk.classpath.gmall-lbb}"/>
+    <pathelement location="${gmall-lbb.output.dir}"/>
+  </path>
+  
+  <path id="gmall-lbb.runtime.module.classpath">
+    <pathelement location="${gmall-lbb.testoutput.dir}"/>
+    <pathelement location="${gmall-lbb.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.gmall-lbb">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gmall-lbb">
+    <patternset refid="excluded.from.module.gmall-lbb"/>
+  </patternset>
+  
+  
+  <target name="compile.module.gmall-lbb" depends="compile.module.gmall-lbb.production,compile.module.gmall-lbb.tests" description="Compile module Gmall-LBB"/>
+  
+  <target name="compile.module.gmall-lbb.production" depends="register.custom.compilers" description="Compile module Gmall-LBB; production classes"/>
+  
+  <target name="compile.module.gmall-lbb.tests" depends="register.custom.compilers,compile.module.gmall-lbb.production" description="compile module Gmall-LBB; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.gmall-lbb" description="cleanup module">
+    <delete dir="${gmall-lbb.output.dir}"/>
+    <delete dir="${gmall-lbb.testoutput.dir}"/>
+  </target>
+</project>
