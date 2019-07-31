@@ -53,4 +53,16 @@ public interface ManageService {
      * @return
      */
     BaseAttrInfo getAttrInfo(String attrId);
+    /**
+     * 获取所有的销售属性数据
+     * @return
+     */
+    List<BaseSaleAttr> getBaseSaleAttrList();
+    /**
+    *
+    *@description:  根据spuInfo对象属性获取spuInfo集合
+    *@author: 李国毅 on * 2019-07-30 18:57
+    *@E-mail:  41893083@qq.com
+    **/
+    List <SpuInfo> getSpulist(SpuInfo spuInfo);
 }

@@ -1,5 +1,6 @@
 package com.lbb.gmall.manage.service.impl;
 
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.lbb.gmall.bean.*;
 import com.lbb.gmall.manage.mapper.*;
@@ -36,6 +37,9 @@ public class ManageServiceImpl implements ManageService {
     @Autowired
     private BaseAttrValueMapper baseAttrValueMapper;
 
+    @Autowired
+    private SpuInfoMapper spuInfoMapper;
+
     @Override
     public List<BaseCatalog1> getCatalog1() {
         return baseCatalog1Mapper.selectAll();
@@ -68,9 +72,8 @@ public class ManageServiceImpl implements ManageService {
     @Transactional
     @Override
     public void saveAttrInfo(BaseAttrInfo baseAttrInfo) {
-
         // 修改操作！
-        if (baseAttrInfo.getId()!=null || baseAttrInfo.getId().length()>0){
+        if (baseAttrInfo.getId()!=null && baseAttrInfo.getId().length()>0){
             baseAttrInfoMapper.updateByPrimaryKeySelective(baseAttrInfo);
         }else {
             // 保存数据 baseAttrInfo
@@ -99,6 +102,8 @@ public class ManageServiceImpl implements ManageService {
                 baseAttrValueMapper.insertSelective(baseAttrValue);
             }
         }
+
+
     }
 
     @Override
@@ -125,5 +130,18 @@ public class ManageServiceImpl implements ManageService {
 
         baseAttrInfo.setAttrValueList(baseAttrValueList);
         return baseAttrInfo;
+    }
+
+    @Override
+    public List<BaseSaleAttr> getBaseSaleAttrList() {
+        return null;
+    }
+
+    @Override
+    public List<SpuInfo> getSpulist(SpuInfo spuInfo) {
+        List<SpuInfo> spuInfoList = spuInfoMapper.select(spuInfo);
+
+
+        return spuInfoList;
     }
 }
