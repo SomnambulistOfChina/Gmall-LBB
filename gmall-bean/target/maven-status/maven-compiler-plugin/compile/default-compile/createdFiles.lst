@@ -1,2 +1,10 @@
-com/lbb/gmall/UserInfo.class
-com/lbb/gmall/UserAddress.class
+com/lbb/gmall/bean/BaseAttrValue.class
+com/lbb/gmall/bean/BaseSaleAttr.class
+com/lbb/gmall/bean/BaseAttrInfo.class
+com/lbb/gmall/bean/BaseCatalog2.class
+com/lbb/gmall/bean/Student.class
+com/lbb/gmall/bean/SpuInfo.class
+com/lbb/gmall/bean/UserAddress.class
+com/lbb/gmall/bean/BaseCatalog1.class
+com/lbb/gmall/bean/BaseCatalog3.class
+com/lbb/gmall/bean/UserInfo.class

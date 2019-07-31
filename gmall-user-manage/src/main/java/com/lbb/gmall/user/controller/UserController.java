@@ -1,7 +1,7 @@
 package com.lbb.gmall.user.controller;
 
-import com.lbb.gmall.UserInfo;
-import com.lbb.gmall.UserService;
+import com.lbb.gmall.bean.UserInfo;
+import com.lbb.gmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
