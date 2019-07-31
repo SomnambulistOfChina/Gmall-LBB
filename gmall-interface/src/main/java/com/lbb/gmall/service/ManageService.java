@@ -1,0 +1,68 @@
+package com.lbb.gmall.service;
+
+import com.lbb.gmall.bean.*;
+
+import java.util.List;
+
+public interface ManageService {
+
+    /**
+     * 获取所有的一级分类数据
+     * @return
+     */
+    List<BaseCatalog1> getCatalog1();
+
+    /**
+     * 根据一级分类Id 查询二级分类数据
+     * select * from baseCatalog2 where catalog1Id =?
+     * @param catalog1Id
+     * @return
+     */
+    List<BaseCatalog2> getCatalog2(String catalog1Id);
+
+    /**
+     * 根据二级分类Id 查询三级分类数据
+     * @param catalog2Id
+     * @return
+     */
+    List<BaseCatalog3> getCatalog3(String catalog2Id);
+
+    /**
+     * 根据三级分类Id 查询平台属性集合
+     * @param catalog3Id
+     * @return
+     */
+    List<BaseAttrInfo> getAttrList(String catalog3Id);
+
+    /**
+     * 保存平台属性数据
+     * @param baseAttrInfo
+     */
+    void saveAttrInfo(BaseAttrInfo baseAttrInfo);
+
+    /**
+     * 根据平台属性Id 查询平台属性值集合
+     * @param attrId
+     * @return
+     */
+    List<BaseAttrValue> getAttrValueList(String attrId);
+
+    /**
+     * 根据平台属性Id 查询平台属性对象
+     * @param attrId
+     * @return
+     */
+    BaseAttrInfo getAttrInfo(String attrId);
+    /**
+     * 获取所有的销售属性数据
+     * @return
+     */
+    List<BaseSaleAttr> getBaseSaleAttrList();
+    /**
+    *
+    *@description:  根据spuInfo对象属性获取spuInfo集合
+    *@author: 李国毅 on * 2019-07-30 18:57
+    *@E-mail:  41893083@qq.com
+    **/
+    List <SpuInfo> getSpulist(SpuInfo spuInfo);
+}

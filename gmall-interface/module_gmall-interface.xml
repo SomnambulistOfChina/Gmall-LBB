@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gmall-interface" default="compile.module.gmall-interface">
+  <dirname property="module.gmall-interface.basedir" file="${ant.file.module_gmall-interface}"/>
+  
+  <property name="module.jdk.home.gmall-interface" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.gmall-interface" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.gmall-interface" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.gmall-interface" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="gmall-interface.output.dir" value="${module.gmall-interface.basedir}/target/classes"/>
+  <property name="gmall-interface.testoutput.dir" value="${module.gmall-interface.basedir}/target/test-classes"/>
+  
+  <path id="gmall-interface.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gmall-interface.module.production.classpath">
+    <path refid="${module.jdk.classpath.gmall-interface}"/>
+    <pathelement location="${gmall-bean.output.dir}"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-starter:1.2.3.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.10.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-autoconfigure:1.2.3.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper:3.5.2.classpath"/>
+    <path refid="library.maven:_javax.persistence:persistence-api:1.0.classpath"/>
+    <path refid="library.maven:_org.projectlombok:lombok:1.16.20.classpath"/>
+  </path>
+  
+  <path id="gmall-interface.runtime.production.module.classpath">
+    <pathelement location="${gmall-interface.output.dir}"/>
+    <path refid="gmall-bean.runtime.production.module.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-starter:1.2.3.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.10.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-autoconfigure:1.2.3.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper:3.5.2.classpath"/>
+    <path refid="library.maven:_javax.persistence:persistence-api:1.0.classpath"/>
+    <path refid="library.maven:_org.projectlombok:lombok:1.16.20.classpath"/>
+  </path>
+  
+  <path id="gmall-interface.module.classpath">
+    <path refid="${module.jdk.classpath.gmall-interface}"/>
+    <pathelement location="${gmall-interface.output.dir}"/>
+    <pathelement location="${gmall-bean.testoutput.dir}"/>
+    <pathelement location="${gmall-bean.output.dir}"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-starter:1.2.3.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.10.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-autoconfigure:1.2.3.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper:3.5.2.classpath"/>
+    <path refid="library.maven:_javax.persistence:persistence-api:1.0.classpath"/>
+    <path refid="library.maven:_org.projectlombok:lombok:1.16.20.classpath"/>
+  </path>
+  
+  <path id="gmall-interface.runtime.module.classpath">
+    <pathelement location="${gmall-interface.testoutput.dir}"/>
+    <pathelement location="${gmall-interface.output.dir}"/>
+    <path refid="gmall-bean.runtime.module.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-starter:1.2.3.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.10.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.10.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.14.release.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper-spring-boot-autoconfigure:1.2.3.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_tk.mybatis:mapper:3.5.2.classpath"/>
+    <path refid="library.maven:_javax.persistence:persistence-api:1.0.classpath"/>
+    <path refid="library.maven:_org.projectlombok:lombok:1.16.20.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.gmall-interface">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gmall-interface">
+    <patternset refid="excluded.from.module.gmall-interface"/>
+  </patternset>
+  
+  <path id="gmall-interface.module.sourcepath">
+    <dirset dir="${module.gmall-interface.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="gmall-interface.module.test.sourcepath">
+    <dirset dir="${module.gmall-interface.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.gmall-interface" depends="compile.module.gmall-interface.production,compile.module.gmall-interface.tests" description="Compile module gmall-interface"/>
+  
+  <target name="compile.module.gmall-interface.production" depends="register.custom.compilers,compile.module.gmall-bean" description="Compile module gmall-interface; production classes">
+    <mkdir dir="${gmall-interface.output.dir}"/>
+    <javac2 destdir="${gmall-interface.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gmall-interface}/javac">
+      <compilerarg line="${compiler.args.gmall-interface}"/>
+      <bootclasspath refid="gmall-interface.module.bootclasspath"/>
+      <classpath refid="gmall-interface.module.production.classpath"/>
+      <src refid="gmall-interface.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gmall-interface"/>
+    </javac2>
+    
+    <copy todir="${gmall-interface.output.dir}">
+      <fileset dir="${module.gmall-interface.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.gmall-interface.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.gmall-interface.tests" depends="register.custom.compilers,compile.module.gmall-interface.production" description="compile module gmall-interface; test classes" unless="skip.tests">
+    <mkdir dir="${gmall-interface.testoutput.dir}"/>
+    <javac2 destdir="${gmall-interface.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gmall-interface}/javac">
+      <compilerarg line="${compiler.args.gmall-interface}"/>
+      <bootclasspath refid="gmall-interface.module.bootclasspath"/>
+      <classpath refid="gmall-interface.module.classpath"/>
+      <src refid="gmall-interface.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gmall-interface"/>
+    </javac2>
+    
+    <copy todir="${gmall-interface.testoutput.dir}">
+      <fileset dir="${module.gmall-interface.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.gmall-interface" description="cleanup module">
+    <delete dir="${gmall-interface.output.dir}"/>
+    <delete dir="${gmall-interface.testoutput.dir}"/>
+  </target>
+</project>
