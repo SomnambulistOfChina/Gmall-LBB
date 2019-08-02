@@ -53,16 +53,45 @@ public interface ManageService {
      * @return
      */
     BaseAttrInfo getAttrInfo(String attrId);
+
+    List<SpuInfo> getSpuList(String catalog3Id);
+
+    /**
+     * 根据spuInfo 对象属性获取spuInfo 集合
+     * @param spuInfo
+     * @return
+     */
+    List<SpuInfo> getSpuList(SpuInfo spuInfo);
+
     /**
      * 获取所有的销售属性数据
      * @return
      */
     List<BaseSaleAttr> getBaseSaleAttrList();
+
     /**
-    *
-    *@description:  根据spuInfo对象属性获取spuInfo集合
-    *@author: 李国毅 on * 2019-07-30 18:57
-    *@E-mail:  41893083@qq.com
-    **/
-    List <SpuInfo> getSpulist(SpuInfo spuInfo);
+     * 保存spuInfo
+     * @param spuInfo
+     */
+    void saveSpuInfo(SpuInfo spuInfo);
+
+    /**
+     *
+     * @param spuImage
+     * @return
+     */
+    List<SpuImage> getSpuImageList(SpuImage spuImage);
+
+    /**
+     * 根据spuId 获取销售属性集合
+     * @param spuId
+     * @return
+     */
+    List<SpuSaleAttr> getSpuSaleAttrList(String spuId);
+
+    /**
+     * 保存skuInfo 数据
+     * @param skuInfo
+     */
+    void saveSkuInfo(SkuInfo skuInfo);
 }

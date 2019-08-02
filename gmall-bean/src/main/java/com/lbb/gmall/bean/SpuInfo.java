@@ -31,10 +31,10 @@ public class SpuInfo implements Serializable {
 
     @Column
     private  String catalog3Id;
-    // 销售属性集合
-//    @Transient
-//    private List<SpuSaleAttr> spuSaleAttrList;
-//    // 图片列表集合
-//    @Transient
-//    private List<SpuImage> spuImageList;
+     //销售属性集合
+    @Transient
+    private List<SpuSaleAttr> spuSaleAttrList;
+    // 图片列表集合
+    @Transient
+    private List<SpuImage> spuImageList;
 }

@@ -44,6 +44,7 @@ public class ManageController {
 
     @RequestMapping("attrInfoList")
     public List<BaseAttrInfo> attrInfoList(String catalog3Id){
+
         return manageService.getAttrList(catalog3Id);
     }
 
@@ -72,6 +73,7 @@ public class ManageController {
 
     @RequestMapping("baseSaleAttrList")
     public List<BaseSaleAttr> baseSaleAttrList(){
+
         return manageService.getBaseSaleAttrList();
     }
 
